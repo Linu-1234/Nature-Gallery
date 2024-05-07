@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Gallery</title>
+    <meta name="description" content="page description here"/>
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <style>
+        body {
+            background-color: #222;
+            margin-top: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        #container {
+            text-align: center;
+             /* Center align content */
+        }
+
+        .gallery-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Adjusted for five columns */
+            grid-gap: 10px;
+        }
+
+        .thumbnails img {
+            width: 100%;
+            height: auto;
+            border: 3px solid grey;
+            padding: 1px;
+            margin: 0 15px 15px 0;
+            border-radius:10px;
+        }
+
+        .thumbnails img:hover {
+            border: 4px solid #0a6d17;
+        }
+
+        .preview {
+            margin-top: 20px; /* Add margin for spacing */
+        }
+
+        .preview img {
+            border: 4px solid #444;
+            padding: 1px;
+            max-width:800px; /* Adjusted to maximum width */
+            display: block; /* Ensures centered alignment */
+            margin: 0 auto; /* Center the image */
+            box-shadow: 5px 2px 1px 0px #f9fafa , 2px 4px 8px 0 rgb(177, 177, 177);
+            border-radius: 30px;  
+        }
+
+        .typing-text {
+            overflow: hidden;
+            border-right: .15em solid #222; /* Change the border color as desired */
+            white-space: nowrap;
+            margin: 0 auto; /* Center the text */
+            animation: typing 5s linear infinite; /* Smooth animation with linear timing */
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        #footer {
+            background-color: rgb(19, 55, 19);
+            text-align: center; /* Center align footer text */
+            color: white;
+            margin-top: 20px; /* Add some top margin for spacing */
+            padding:5px;
+        
+        }
+        .header{
+            text-align: center;
+            background-color: rgb(19, 55, 19);
+            margin:0 10px 10px 0;
+            padding:20px;
+            border:3px solid grey;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>@Nature</h1>
+        <p> Look deep into nature, and then you will understand everything better. </p>
+    </div>
+<div id="container">
+    <h1 class="typing-text">Photo Gallery!</h1>
+    <br>
+
+    <div class="gallery-wrapper">
+        <div class="thumbnails"> <!-- Changed to class="thumbnails" -->
+            <img onmouseover="preview.src=pic1.src" name="pic1" src="pic1.jpeg">
+            <img onmouseover="preview.src=pic2.src" name="pic2" src="pic2.jpg">
+            <img onmouseover="preview.src=pic3.src" name="pic3" src="pic3.jpg">
+            <img onmouseover="preview.src=pic4.src" name="pic4" src="pic4.jpg">
+            <img onmouseover="preview.src=pic5.src" name="pic5" src="pic5.jpg">
+        </div>
+
+        <div class="preview">
+            <img name="preview" src="pic1.jpeg">
+        </div>
+    </div>
+
+</div>
+<div id="footer">@Priyambada</div>
+
+</body>
+</html>
